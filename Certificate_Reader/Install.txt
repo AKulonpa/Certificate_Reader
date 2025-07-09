@@ -1,0 +1,3 @@
+!pip3 install --upgradde --quiet langchain langchain-community langchain-openai chromadb
+!pip3 install --upgradde --quiet pypdf pandas streamlit python-dotenv
+pip install pdfminer.six PyMuPDF pillow tabula-py pandas
