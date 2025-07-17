@@ -1,9 +1,9 @@
 import fitz
 import io
-from pdfminer.high_level import extract_pages, extract_text
+from pdfminer.high_level import extract_text
 from PIL import Image
 import pytesseract
-import doc2txt as d2t
+import docx2txt as d2t
 
 
 #PDF
@@ -24,4 +24,4 @@ def DocxText (path_to_file, image_folder=None, get_text=True):
 #TXT
 def TxtText (path):
     with open(path, encoding="utf-8") as f:
-        return f.read
+        return f.read()

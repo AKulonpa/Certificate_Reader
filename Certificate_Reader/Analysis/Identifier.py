@@ -26,3 +26,10 @@ def AnalyzeFile(filepath):
     
     else:
         raise ValueError(f"I don't know what file this is :(")
+    
+#Test
+if __name__ == "__main__":
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    filepath = os.path.normpath(os.path.join(current_dir, "..", "testdata", "pdf2.pdf"))
+    text = AnalyzeFile(filepath)
+    print("Found text:\n", text)
