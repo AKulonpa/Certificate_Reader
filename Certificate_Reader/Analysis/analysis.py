@@ -14,7 +14,7 @@ llm = ChatOpenAI(model="gpt-4o-mini", api_key=OPENAI_API_KEY)
 #Test
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    filepath = os.path.normpath(os.path.join(current_dir, "..", "testdata", "docx1.docx"))
+    filepath = os.path.normpath(os.path.join(current_dir, "..", "testdata", "jpg4.jpg"))
     text = AnalyzeFile(filepath)
 
 #Prompt
@@ -30,6 +30,8 @@ Answer the following questions:
 1. What were the employees duties?
 2. When did the work take place?
 3. In what company did they work at?
+4. If 1 ECT credit = 27 hours, how many ECT credits did the employee earn?
+5. The employee studies to become Bachelor of Engineering, Information Technology. Is this job aligned with their studies?
 
 Answer in a structured manner.
 Use the given data to answer the question. If you don't know the answer, say you don't know.
@@ -40,3 +42,7 @@ prompt = PROMPT_TEMPLATE.format(context=text)
 response = llm.invoke(prompt)
 
 print(response.content)
+
+# Save response to a text file
+with open("llm_response.txt", "w", encoding="utf-8") as f:
+    f.write(response.content)

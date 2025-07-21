@@ -1,5 +1,5 @@
 import os
-from DocReader import (PdfText, TxtText, ImgText, DocxText)
+from DocReader import (PdfText, TxtText, ImagText, DocxText)
 
 def AnalyzeFile(filepath):
     ext = os.path.splitext(filepath)[1].lower()
@@ -11,7 +11,7 @@ def AnalyzeFile(filepath):
     
     elif ext in [".jpg", ".jpeg", ".png"]:
         print("This is a picture...")
-        text = ImgText(filepath)
+        text = ImagText(filepath)
         return text
     
     elif ext == ".docx":
@@ -26,3 +26,11 @@ def AnalyzeFile(filepath):
     
     else:
         raise ValueError(f"I don't know what file this is :(")
+    
+
+    #Test
+if __name__ == "__main__":
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    filepath = os.path.normpath(os.path.join(current_dir, "..", "testdata", "jpg9.jpg"))
+    text = AnalyzeFile(filepath)
+    print(text)

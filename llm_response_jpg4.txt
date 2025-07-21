@@ -1,0 +1,10 @@
+1. **Employee's Duties:**  
+   - Design and implementation of a software tool dedicated to Hardware Reliability predictability.
+   - Involvement in technology and reliability engineering.
+   - Understanding of SW Java language.
+
+2. **Work Period:**  
+   - From 16.05.2006 to 31.10.2006.
+
+3. **Company:**  
+   - Nokia Corporation.

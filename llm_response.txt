@@ -1,0 +1,11 @@
+1. **Employee's Duties**: The employee, Matti Tuunanen, worked as a SW Designer as a trainee. His duties involved the design and implementation of a software tool dedicated to hardware reliability predictability, which required knowledge in technology, reliability engineering, and proficiency in the Java programming language.
+
+2. **Work Period**: The employment took place from May 16, 2006, to October 31, 2006.
+
+3. **Company**: The employee worked at Nokia Corporation.
+
+4. **ECT Credits Earned**: The duration of employment was approximately 5.5 months (or around 176 days). Assuming a standard full-time engagement of 40 hours per week:
+   - Total hours worked: 176 days × 8 hours/day = 1,408 hours
+   - ECT credits earned: 1,408 hours ÷ 27 hours/ECT = approximately 52 ECT credits.
+
+5. **Job Alignment with Studies**: Yes, the job as a SW Designer involved software design and engineering, which is aligned with the employee's studies in Bachelor of Engineering, Information Technology.
