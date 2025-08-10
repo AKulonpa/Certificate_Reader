@@ -12,7 +12,7 @@ import numpy as np
 pytesseract.pytesseract.tesseract_cmd = r'D:\ReaderStuff\tesseract.exe'
 
 #IMG
-def ImagText(img_path):
+def ImagText(img_path, SelectedLang):
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
     img = cv2.resize(img, None, fx=4, fy=4, interpolation=cv2.INTER_CUBIC)
     _, img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
@@ -27,7 +27,7 @@ def ImagText(img_path):
     img = cv2.warpAffine(img, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
     img = cv2.equalizeHist(img)
     pil_img = Image.fromarray(img)
-    return pytesseract.image_to_string(pil_img, lang='fin+eng')
+    return pytesseract.image_to_string(pil_img, SelectedLang)
 
 #PDF
 def PdfText(pdf_path):

@@ -1,7 +1,7 @@
 import os
-from DocReader import (PdfText, TxtText, ImagText, DocxText)
+from Certificate_Reader.Reader.Analysis.DocReader import (PdfText, TxtText, ImagText, DocxText)
 
-def AnalyzeFile(filepath):
+def AnalyzeFile(filepath, SelectedLang):
     ext = os.path.splitext(filepath)[1].lower()
 
     if ext == ".pdf":
@@ -11,7 +11,7 @@ def AnalyzeFile(filepath):
     
     elif ext in [".jpg", ".jpeg", ".png"]:
         print("This is a picture...")
-        text = ImagText(filepath)
+        text = ImagText(filepath, SelectedLang)
         return text
     
     elif ext == ".docx":
