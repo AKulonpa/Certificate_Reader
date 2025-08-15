@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from Certificate_Reader.Reader.Analysis.Identifier import AnalyzeFile
 
-def AnalyzeCertificate(filepath, SelectedLang):
+def AnalyzeCertificate(filepath, SelectedLang, education_field):
 
 #load API key from .env
     load_dotenv()
@@ -22,12 +22,15 @@ def AnalyzeCertificate(filepath, SelectedLang):
 
     ---
 
+    The user's education field is: {education_field}
+
     Answer the following questions:
     1. What were the employees duties?
     2. When did the work take place?
     3. In what company did they work at?
     4. If 1 ECT credit = 27 hours, how many ECT credits did the employee earn? If there are no specified hours, use 38 hours per week as a default.
-    5. The employee studies to become Bachelor of Engineering, Information Technology. Is this job aligned with their studies?
+    5. The employee studies {education_field}. Is this job aligned with their studies?
+    6. Where and why did you use your reasoning skills to find the answers? (optional)
 
     Answer in a structured manner.
     Text can be a little disorganized, so you may need to use your reasoning skills to find the answers. Tell If you used them.
@@ -35,13 +38,7 @@ def AnalyzeCertificate(filepath, SelectedLang):
     Don't make up anything.
     """
 
-    prompt = PROMPT_TEMPLATE.format(context=text)
+    prompt = PROMPT_TEMPLATE.format(context=text, education_field=education_field)
     response = llm.invoke(prompt)
-
-    print(response.content)
-
-    # Save response to a text file
-    with open("llm_response.txt", "w", encoding="utf-8") as f:
-        f.write(response.content)
 
     return response.content

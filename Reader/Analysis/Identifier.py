@@ -6,7 +6,7 @@ def AnalyzeFile(filepath, SelectedLang):
 
     if ext == ".pdf":
         print("This is PDF...")
-        text = PdfText(filepath)
+        text = PdfText(filepath, SelectedLang)
         return text
     
     elif ext in [".jpg", ".jpeg", ".png"]:

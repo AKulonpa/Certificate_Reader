@@ -30,7 +30,7 @@ def ImagText(img_path, SelectedLang):
     return pytesseract.image_to_string(pil_img, SelectedLang)
 
 #PDF
-def PdfText(pdf_path):
+def PdfText(pdf_path, SelectedLang):
     text = extract_text(pdf_path)
 
     #images in pdf
@@ -44,7 +44,7 @@ def PdfText(pdf_path):
             temp_img_path = f"temp_pdf_img_{i}_{image[0]}.png"
             with open(temp_img_path, "wb") as img_file:
                 img_file.write(image_data)
-            ocr_text = ImagText(temp_img_path)
+            ocr_text = ImagText(temp_img_path, SelectedLang)
             text += f"\n[Image OCR Text]:\n{ocr_text}"
             os.remove(temp_img_path)
     return text
